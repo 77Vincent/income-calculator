@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html ng-app="App" lang="en" ng-controller="AppController">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>月光族计算器</title>
+  <meta name="description" content="Income Calculator">
+  <meta name="author" content="77Vincent">
+
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <form action="">
+      <div ng-repeat="item in data">
+        <label for="">{{item}}</label>
+        <input ng-model="item.model" type="text" placeholder="{{item.placeholder}}" required>
+      </div>
+    </form>
+
+    <div>
+      {{result}}
+    </div>
+  </div>
+
+  <script src="vendor/angular.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
