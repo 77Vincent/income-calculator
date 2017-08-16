@@ -1,8 +1,12 @@
-.input-field label {
-  min-width: 200px; }
+.input-field {
+  label {
+    min-width: 200px;
+  }
 
-.input-field input {
-  max-width: 150px; }
+  input {
+    max-width: 150px;
+  }
+}
 
 .tips {
   width: 20px;
@@ -11,11 +15,13 @@
   background: gray;
   display: inline-block;
   vertical-align: middle;
-  cursor: pointer; }
-  .tips:before {
+  cursor: pointer;
+  &:before {
     content: "?";
     display: block;
     font-weight: bold;
     color: #fff;
     font-size: 14px;
-    text-align: center; }
+    text-align: center;
+  }
+}

@@ -5,16 +5,17 @@ App.controller("AppController", [
   function ($scope) {
 
     $scope.data = [{
-      income: [
-        "月存款",
-        "一个月能存多少钱？"
-      ]
+      label: "Save",
+      suffix: undefined, 
+      model: null,
     }, {
-      income: [
-        "月存款",
-        "一个月能存多少钱？"
-      ]
-
-    }]
+      label: "Average interest rate",
+      suffix: "%", 
+      model: null,
+    }, {
+      label: "Duration",
+      suffix: "Years", 
+      model: null,
+    }];
   }
 ]);

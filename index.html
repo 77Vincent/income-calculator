@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>月光族计算器</title>
+  <title>Deposit calculator</title>
   <meta name="description" content="Income Calculator">
   <meta name="author" content="77Vincent">
 
@@ -20,14 +20,19 @@
 <body>
   <div class="container">
     <form action="">
-      <div ng-repeat="item in data">
-        <label for="">{{item}}</label>
-        <input ng-model="item.model" type="text" placeholder="{{item.placeholder}}" required>
+      <div class="input-field" ng-repeat="item in data">
+        <!-- <div class="tips"></div> -->
+        <label for="item.label">
+          <span>{{item.label}}</span>
+          <span ng-if="item.suffix">({{item.suffix}})</span>
+        </label>
+        <input ng-model="item.model" type="text" required>
       </div>
+
+      <div>{{getDeposit()}}</div>
     </form>
 
     <div>
-      {{result}}
     </div>
   </div>
 
