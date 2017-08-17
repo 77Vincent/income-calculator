@@ -26,7 +26,7 @@
           <span>{{item.label}}</span>
           <span ng-if="item.suffix">({{item.suffix}})</span>
         </label>
-        <input ng-model="item.model" type="number">
+        <input ng-disabled="item.disabled" ng-model="item.model" type="number">
       </div>
 
       <div class="result">

@@ -7,20 +7,25 @@ App.controller("AppController", [
     $scope.input = [{
         label: "Current deposit",
         suffix: undefined,
-        model: 0,
+        model: null,
       },
       {
         label: "Monthly save",
         suffix: undefined,
-        model: 0,
+        model: null,
       }, {
         label: "Average annual interest rate",
         suffix: "%",
-        model: 0,
+        model: null,
       }, {
         label: "Duration",
         suffix: "Years",
-        model: 1,
+        model: null,
+      }, {
+        label: "Duration",
+        suffix: "months",
+        model: this[0],
+        disabled: true,
       }
     ];
 
@@ -32,14 +37,13 @@ App.controller("AppController", [
     var deposit = $scope.input[0].model;
 
     $scope.calculate = function () {
-      var deposit = $scope.input[0].model;
-      var save = $scope.input[1].model;
-      var rate = $scope.input[2].model;
-      var duration = $scope.input[3].model;
+      var d = $scope.input[0].model;
+      var s = $scope.input[1].model;
+      var r = $scope.input[2].model;
+      var y = $scope.input[3].model;
 
-      (deposit + (save * 12)) * rate
 
-      $scope.output[0].model = deposit;
+      $scope.output[0].model = (d + (s * 12)) * Math.pow((1 + r/100), y);
     };
 
   }
