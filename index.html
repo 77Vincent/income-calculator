@@ -20,20 +20,24 @@
 <body>
   <div class="container">
     <form action="">
-      <div class="input-field" ng-repeat="item in data">
+      <div class="field" ng-repeat="item in input">
         <!-- <div class="tips"></div> -->
         <label for="item.label">
           <span>{{item.label}}</span>
           <span ng-if="item.suffix">({{item.suffix}})</span>
         </label>
-        <input ng-model="item.model" type="text" required>
+        <input ng-model="item.model" type="number">
       </div>
 
-      <div>{{getDeposit()}}</div>
+      <div class="result">
+        <div class="field" ng-repeat="item in output">
+          <label for="">{{item.label}}</label>
+          <input disabled ng-model="item.model">
+        </div>
+      </div>
     </form>
 
-    <div>
-    </div>
+    <button class="calculate" type="button" ng-click="calculate()">Calculate</button>
   </div>
 
   <script src="vendor/angular.min.js"></script>

@@ -1,8 +1,16 @@
-.input-field label {
-  min-width: 200px; }
+.field label {
+  min-width: 240px; }
 
-.input-field input {
+.field input {
   max-width: 150px; }
+
+.result {
+  border-top: 1px solid lightgray;
+  padding-top: 10px;
+  margin-top: 10px; }
+
+.calculate {
+  margin: 10px 0; }
 
 .tips {
   width: 20px;
