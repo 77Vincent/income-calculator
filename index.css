@@ -1,5 +1,5 @@
 .field span {
-  vertical-align: baseline; }
+  vertical-align: top; }
 
 .field label {
   min-width: 250px; }
@@ -16,12 +16,11 @@
   margin: 10px 0; }
 
 .tips {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background-color: navy;
   display: inline-block;
-  vertical-align: middle;
   cursor: pointer; }
   .tips:before {
     content: "?";
@@ -29,7 +28,7 @@
     font-weight: bold;
     color: #fff;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 14px;
     text-align: center; }
   .tips:hover {
     background-color: gray; }

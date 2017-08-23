@@ -1,6 +1,6 @@
 .field {
   span {
-    vertical-align: baseline;
+    vertical-align: top;
   }
 
   label {
@@ -22,12 +22,11 @@
 }
 
 .tips {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background-color: navy;
   display: inline-block;
-  vertical-align: middle;
   cursor: pointer;
   &:before {
     content: "?";
@@ -35,7 +34,7 @@
     font-weight: bold;
     color: #fff;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 14px;
     text-align: center;
   }
   &:hover {

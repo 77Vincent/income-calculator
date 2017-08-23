@@ -4,8 +4,6 @@ App.controller("AppController", [
   "$scope",
   function ($scope) {
 
-    var decimalRounding = 4;
-
     /**
      * @param {Number} number
      * @param {Integer} round 
@@ -26,7 +24,7 @@ App.controller("AppController", [
 
       var value = Math.pow(result, 1 / exponent);
 
-      return rounding(value, decimalRounding);
+      return rounding(value, 2);
     };
 
     // Model of input
@@ -48,24 +46,24 @@ App.controller("AppController", [
         suffix: "%",
         model: null,
         onChange: function () {
-          $scope.input[3].model = rounding(this.model / 12, decimalRounding);
-          $scope.input[4].model = rounding(this.model / 365, decimalRounding);
+          $scope.input[3].model = rounding(this.model / 12, 4);
+          $scope.input[4].model = rounding(this.model / 365, 4);
         }
       }, {
         label: "Monthly interest rate",
         suffix: "%",
         model: null,
         onChange: function () {
-          $scope.input[2].model = rounding(this.model * 12, decimalRounding);
-          $scope.input[4].model = rounding(this.model / 12, decimalRounding);
+          $scope.input[2].model = rounding(this.model * 12, 4);
+          $scope.input[4].model = rounding(this.model / 12, 4);
         }
       }, {
         label: "Daily interest rate",
         suffix: "%",
         model: null,
         onChange: function () {
-          $scope.input[2].model = rounding(this.model * 365, decimalRounding);
-          $scope.input[3].model = rounding(this.model * 12, decimalRounding);
+          $scope.input[2].model = rounding(this.model * 365, 4);
+          $scope.input[3].model = rounding(this.model * 12, 4);
         }
       }, {
         // Duration
@@ -90,8 +88,8 @@ App.controller("AppController", [
         suffix: "days",
         model: null,
         onChange: function () {
-          $scope.input[5].model = this.model / 365;
-          $scope.input[6].model = this.model / 30.41;
+          $scope.input[5].model = rounding(this.model / 365, 2);
+          $scope.input[6].model = rounding(this.model / 30.41, 2);
         }
       }
     ];
@@ -103,9 +101,8 @@ App.controller("AppController", [
     }];
 
     $scope.calculate = function () {
-      var d = $scope.input[0].model;
-      var s = $scope.input[1].model;
-
+      var deposit = $scope.input[0].model;
+      var save = $scope.input[1].model;
       var r = $scope.input[2].model;
       var y = $scope.input[3].model;
 
