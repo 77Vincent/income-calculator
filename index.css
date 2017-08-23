@@ -1,5 +1,8 @@
+.field span {
+  vertical-align: baseline; }
+
 .field label {
-  min-width: 240px; }
+  min-width: 250px; }
 
 .field input {
   max-width: 150px; }
@@ -13,10 +16,10 @@
   margin: 10px 0; }
 
 .tips {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: gray;
+  background-color: navy;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer; }
@@ -25,5 +28,8 @@
     display: block;
     font-weight: bold;
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 16px;
     text-align: center; }
+  .tips:hover {
+    background-color: gray; }

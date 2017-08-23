@@ -22,17 +22,22 @@
     <form action="">
       <div class="field" ng-repeat="item in input">
         <!-- <div class="tips"></div> -->
+        <h4 ng-if="item.title">
+          <span>{{item.title}}</span>
+          <span class="tips"></span>
+        </h4>
+
         <label for="item.label">
           <span>{{item.label}}</span>
           <span ng-if="item.suffix">({{item.suffix}})</span>
         </label>
-        <input ng-disabled="item.disabled" ng-model="item.model" type="number">
+        <input ng-change="item.onChange()" ng-required="true" ng-model="item.model" placeholder=0 type="number">
       </div>
 
       <div class="result">
         <div class="field" ng-repeat="item in output">
           <label for="">{{item.label}}</label>
-          <input disabled ng-model="item.model">
+          <input ng-change="item.onChange()" ng-disabled="true" ng-model="item.model">
         </div>
       </div>
     </form>
