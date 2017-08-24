@@ -10,7 +10,7 @@
   <meta name="author" content="77Vincent">
 
   <link rel="stylesheet" href="vendor/bootstrap.min.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="build/build.css">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -21,7 +21,6 @@
   <div class="container">
     <form action="">
       <div class="field" ng-repeat="item in input">
-        <!-- <div class="tips"></div> -->
         <h4 ng-if="item.title">
           <span>{{item.title}}</span>
           <span class="tips"></span>
@@ -31,13 +30,13 @@
           <span>{{item.label}}</span>
           <span ng-if="item.suffix">({{item.suffix}})</span>
         </label>
-        <input ng-change="item.onChange()" ng-required="true" ng-model="item.model" placeholder="0" type="number">
+        <input ng-change="item.onChange()" ng-required="true" ng-model="item.model" type="number">
       </div>
 
       <div class="result">
         <div class="field" ng-repeat="item in output">
           <label for="">{{item.label}}</label>
-          <input ng-change="item.onChange()" ng-disabled="true" ng-model="item.model">
+          <input ng-disabled="true" ng-model="item.model">
         </div>
       </div>
     </form>
@@ -46,7 +45,7 @@
   </div>
 
   <script src="vendor/angular.min.js"></script>
-  <script src="index.js"></script>
+  <script src="build/build.js"></script>
 </body>
 
 </html>

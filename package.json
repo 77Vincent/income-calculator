@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "reload": "reload -b",
-    "sass": "node-sass -w index.scss -o ./",
+    "server": "reload -b",
+    "babel-watch": "babel ./src/index.js -w -o ./build/build.js",
+    "sass-watch": "node-sass --output-style compressed -w ./src/index.scss > ./build/build.css",
     "prestart": "npm install",
-    "start": "concurrently \"npm run reload\" \"npm run sass\"",
+    "start": "concurrently \"npm run server\" \"npm run sass-watch\" \"npm run babel-watch\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,8 @@
   },
   "homepage": "https://github.com/77Vincent/income-calculator#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "concurrently": "^3.5.0",
     "node-sass": "^4.5.3",
     "reload": "^2.2.1"
