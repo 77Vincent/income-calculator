@@ -28,7 +28,7 @@
 
         <label for="item.label">
           <span>{{item.label}}</span>
-          <span ng-if="item.suffix">({{item.suffix}})</span>
+          <span class="suffix" ng-if="item.suffix">({{item.suffix}})</span>
         </label>
         <input ng-change="item.onChange()" ng-required="true" ng-model="item.model" type="number">
       </div>

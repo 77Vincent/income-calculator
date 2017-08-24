@@ -1,4 +1,8 @@
 .field {
+  h4 {
+    margin: 10px 0;
+  }
+
   span {
     vertical-align: top;
   }
@@ -9,6 +13,10 @@
   input {
     max-width: 150px;
   }
+}
+
+.suffix {
+  color: gray;
 }
 
 .result {

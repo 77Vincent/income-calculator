@@ -32,53 +32,55 @@ App.controller("AppController", [
         label: "Current deposit",
         title: "Basic",
         suffix: undefined,
-      },
-      {
-        label: "Monthly save",
-        suffix: undefined,
+      }, {
+        label: "Income",
+        suffix: "Monthly basis",
+      }, {
+        label: "Expense",
+        suffix: "Monthly basis",
       }, {
         label: "Annual interest rate",
         title: "Interest rate",
         suffix: "%",
         onChange() {
-          $scope.input[3].model = rounding(this.model / 12, 3);
-          $scope.input[4].model = rounding(this.model / 365, 3);
+          $scope.input[4].model = rounding(this.model / 12, 3);
+          $scope.input[5].model = rounding(this.model / 365, 3);
         }
       }, {
         label: "Monthly interest rate",
         suffix: "%",
         onChange() {
-          $scope.input[2].model = rounding(this.model * 12, 3);
-          $scope.input[4].model = rounding(this.model / 12, 3);
+          $scope.input[3].model = rounding(this.model * 12, 3);
+          $scope.input[5].model = rounding(this.model / 12, 3);
         }
       }, {
         label: "Daily interest rate",
         suffix: "%",
         onChange() {
-          $scope.input[2].model = rounding(this.model * 365, 3);
-          $scope.input[3].model = rounding(this.model * 12, 3);
+          $scope.input[3].model = rounding(this.model * 365, 3);
+          $scope.input[4].model = rounding(this.model * 12, 3);
         }
       }, {
         label: "For how many",
         title: "Duration",
         suffix: "Years",
         onChange() {
-          $scope.input[6].model = rounding(this.model * 12, 0);
-          $scope.input[7].model = rounding(this.model * 365, 0);
+          $scope.input[7].model = rounding(this.model * 12, 0);
+          $scope.input[8].model = rounding(this.model * 365, 0);
         }
       }, {
         label: "For how many",
         suffix: "months",
         onChange() {
-          $scope.input[5].model = rounding(this.model / 12, 0);
-          $scope.input[7].model = rounding(this.model * 30.41, 0);
+          $scope.input[6].model = rounding(this.model / 12, 0);
+          $scope.input[8].model = rounding(this.model * 30.41, 0);
         }
       }, {
         label: "For how many",
         suffix: "days",
         onChange() {
-          $scope.input[5].model = rounding(this.model / 365, 0);
-          $scope.input[6].model = rounding(this.model / 30.41, 0);
+          $scope.input[6].model = rounding(this.model / 365, 0);
+          $scope.input[7].model = rounding(this.model / 30.41, 0);
         }
       }
     ];
@@ -92,9 +94,9 @@ App.controller("AppController", [
 
     $scope.calculate = () => {
       let d = $scope.input[0].model; // deposit
-      let s = $scope.input[1].model; // monthly save
-      let r = $scope.input[3].model; // monthly rate
-      let l = $scope.input[6].model; // how many month
+      let s = $scope.input[1].model - $scope.input[2].model; // monthly save
+      let r = $scope.input[4].model; // monthly rate
+      let l = $scope.input[7].model; // how many month
 
       for (let i = 0; i < l; i++) {
         d = d * (1 + r / 100) + s;
